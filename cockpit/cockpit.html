@@ -1,0 +1,30 @@
+<head>
+  <title>cockpit</title>
+</head>
+
+<body>
+  <h3>Cockpit</h3>
+  <h5>>Service providers</h5>
+  {{> newProviders}}
+  {{> providersBoard}}
+</body>
+
+<template name="newProviders">
+    <form class="new-provider">
+        <span style="font-color:green;" name="successmsg"></span>
+        <input type="text" class="address" name="address" placeholder="providers address here"/>
+        <input type="button" class="add-provider" value="+ Add"/>
+    </form>
+</template>
+
+<template name="providersBoard">
+<ul>
+{{#each providers}}
+    {{> provider}}
+{{/each}}
+</ul>
+</template>
+
+<template name="provider">
+    <li>{{address}}</li>
+</template>
