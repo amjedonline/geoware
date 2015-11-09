@@ -18,6 +18,13 @@ if (Meteor.isClient) {
         addressElement.value="";
     }
   });
+    
+  Template.provider.events({
+    'click .delete': function(event, template) {
+        Providers.remove(this._id);
+    }
+  });
+  
 
 }
 
