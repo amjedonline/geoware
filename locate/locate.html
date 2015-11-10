@@ -1,10 +1,26 @@
 <head>
-  <title>locate</title>
+  <title>Locate - Show my service providers around me</title>
 </head>
 
 <body>
   <div class="map-container">
     {{> googleMap name="myMap" options=myMapOptions}}
   </div>
+  <div class="providers-container">
+    {{> providersBoard}}
+  </div>
 </body>
 
+<template name="providersBoard">
+<ul>
+{{#each providers}}
+    {{> provider}}
+{{/each}}
+</ul>
+</template>
+
+<template name="provider">
+  <li>
+    <span class="text">{{address}} ({{position.lat}},{{position.lng}}</span>
+  </li>
+</template>
